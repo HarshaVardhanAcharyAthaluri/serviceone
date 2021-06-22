@@ -28,7 +28,9 @@ public class UserGreetController {
 	@PostMapping("/greet")
 	public ResponseEntity<String> greet(@RequestBody User user) throws InterruptedException, ExecutionException {
 		log.info("{}",user);
+		log.info("{}","getuserinfo");
 		CompletableFuture<String> completableUser = greetService.getUserInfo(user);
+		log.info("{}","greetuser");
 			CompletableFuture<String> greet =greetService.greetUser();
 			String greetmsg = greet.get();
 			if(completableUser.get()==null)

@@ -1,11 +1,15 @@
 package com.task.serviceone.model;
 
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class User {
-
+	
+	@NotBlank(message = "name is manditory")
 	private String name;
+	@NotBlank(message = "surname is manditory")
 	private String surName;
 	public String getName() {
 		return name;
